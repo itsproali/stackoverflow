@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+import Home from "./pages/Home/Home";
+import SideNav from "./components/SideNav/SideNav";
+import { useState } from "react";
+
 
 function App() {
+  const [isOpen, setIsOpen] = useState(true)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div className="block md:flex min-h-screen relative border-b">
+      <SideNav isOpen={isOpen} setIsOpen={setIsOpen} />
+      <div className="w-full container mx-auto">
+      <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
+      <Routes>
+        <Route path="/" element={<Home isOpen={isOpen}/>} />
+      </Routes>
+      </div>
     </div>
+      <Footer/>
+      </>
   );
 }
 

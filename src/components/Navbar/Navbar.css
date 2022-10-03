@@ -1,0 +1,31 @@
+.search-container {
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    margin: auto;
+}
+
+.search-field {
+    display: block;
+    padding-left: 1.5rem;
+    width: 100%;
+    border-bottom: 1px solid gray;
+}
+
+.search-field:focus{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--orange);
+}
+
+.user-arrow {
+    transition: .3s;
+}
+
+.nav-user:hover .user-arrow {
+    transform: rotate(-90deg);
+}

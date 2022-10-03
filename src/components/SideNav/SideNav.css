@@ -1,0 +1,11 @@
+.side-nav {
+    box-shadow: 0 0 15px -2px gray;
+    overflow-y: hidden;
+    /* position: relative; */
+    transition: all .3s linear;
+    padding-right: 1rem;
+}
+
+.active-route {
+    box-shadow: 0 2px 2px 2px var(--orange);
+}
