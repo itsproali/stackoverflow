@@ -4,6 +4,8 @@ import { AiOutlineLike, AiFillEye } from "react-icons/ai";
 import { BsChatRight } from "react-icons/bs";
 import { HiOutlineDocumentText } from "react-icons/hi";
 import ReactTimeAgo from "react-time-ago";
+import logo from "../../assets/stackoverflow_icon_logo.svg";
+import Loading from "../../components/Loading/Loading";
 
 const Questions = () => {
   const [loading, setLoading] = useState(false);
@@ -12,6 +14,7 @@ const Questions = () => {
   useEffect(() => {
     const getData = async () => {
       try {
+        setLoading(true)
         const { data } = await axios.get(
           "https://api.stackexchange.com/2.3/questions?order=desc&sort=activity&site=stackoverflow"
         );
@@ -25,7 +28,7 @@ const Questions = () => {
   }, []);
 
   if (loading) {
-    return <p>Loading ...</p>;
+    return <Loading/>;
   }
 
   return (
@@ -122,6 +125,35 @@ const Questions = () => {
             </div>
           );
         })}
+      </div>
+
+      <div className="my-16 flex flex-col items-center justify-center text-center">
+        <div className="mb-8">
+          <button className="rounded-full bg-white shadow-lg shadow-primary p-3 mb-8">
+            <img src={logo} alt="stackoverflow" className="inline-block w-20 h-20" />
+          </button>
+          <div className="flex items-center gap-1">
+            <div className="h-1 w-10 bg-primary rounded-full"></div>
+            <div className="h-1 w-2 bg-secondary rounded-full"></div>
+            <div className="h-1 w-32 bg-primary rounded-full"></div>
+            <div className="h-1 w-1 bg-primary rounded-full"></div>
+            <div className="h-1 w-14 bg-secondary rounded-full"></div>
+          </div>
+        </div>
+        <div className="">
+          <h2 className="text-2xl">Looking for more?</h2>
+          <p className="my-2 max-w-lg">
+            Browse the{" "}
+            <span className="text-secondary hover:underline cursor-pointer">
+              complete list of questions
+            </span>
+            , or{" "}
+            <span className="text-secondary hover:underline cursor-pointer">
+              popular tags
+            </span>
+            . Help us answer unanswered questions.
+          </p>
+        </div>
       </div>
     </div>
   );
