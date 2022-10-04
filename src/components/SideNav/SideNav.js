@@ -31,7 +31,7 @@ const SideNav = ({ isOpen, setIsOpen }) => {
       className={`${
         isOpen
           ? "ml-0"
-          : "-ml-[103%] md:-ml-[38%] lg:-ml-[23%] "
+          : "-ml-[100%] md:-ml-[35%] lg:-ml-[20%] "
       } fixed top-0 left-0 z-40 md:relative bg-white w-[100%] md:w-[35%] lg:w-[20%] h-screen md:h-auto bg-opacity-70 md:bg-opacity-100 backdrop-blur-md side-nav`}
     >
       <div className="w-[100%] mt-2">

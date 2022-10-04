@@ -21,7 +21,7 @@ const Questions = () => {
       }
       setLoading(false);
     };
-    getData();
+    // getData();
   }, []);
 
   if (loading) {
@@ -34,7 +34,7 @@ const Questions = () => {
         Questions
       </h1>
 
-      <div className="flex items-center gap-6 mb-3">
+      <div className="flex flex-wrap items-center gap-2 md:gap-6 mb-3">
         <button className="text-white bg-primary px-3 py-1 rounded-full">
           Interesting
         </button>

@@ -4,6 +4,7 @@ import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
 import SideNav from "./components/SideNav/SideNav";
 import { useState } from "react";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
   const [isOpen, setIsOpen] = useState(true);
@@ -19,6 +20,7 @@ function App() {
         </div>
       </div>
       <Footer />
+      {/* <ScrollToTop /> */}
     </>
   );
 }
