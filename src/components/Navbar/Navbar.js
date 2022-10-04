@@ -7,7 +7,7 @@ import { FaTv, FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
-const Navbar = ({ isOpen, setIsOpen }) => {
+const Navbar = ({ isOpen, setIsOpen, setSearchValue }) => {
   return (
     <>
       <nav className="flex items-center justify-between py-4 mx-4 ">
@@ -31,7 +31,18 @@ const Navbar = ({ isOpen, setIsOpen }) => {
             <span className="search-icon">
               <FaSearch />
             </span>
-            <input type="text" name="search" id="search" className="search-field" />
+            <input
+              type="text"
+              name="search"
+              id="search"
+              className="search-field"
+              placeholder="Hit Enter to Search ..."
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  setSearchValue(e.target.value);
+                }
+              }}
+            />
           </div>
         </div>
 

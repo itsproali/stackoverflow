@@ -7,28 +7,33 @@ import ReactTimeAgo from "react-time-ago";
 import logo from "../../assets/stackoverflow_icon_logo.svg";
 import Loading from "../../components/Loading/Loading";
 
-const Questions = () => {
+const Questions = ({ searchValue }) => {
   const [loading, setLoading] = useState(false);
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
       try {
-        setLoading(true)
-        const { data } = await axios.get(
-          "https://api.stackexchange.com/2.3/questions?order=desc&sort=activity&site=stackoverflow"
-        );
+        setLoading(true);
+        let url =
+          "https://api.stackexchange.com/2.3/questions?order=desc&sort=activity&site=stackoverflow";
+        if (searchValue) {
+          console.log(searchValue);
+          url = `https://api.stackexchange.com/2.3/search?order=desc&sort=activity&intitle=${searchValue}&site=stackoverflow`;
+        }
+        const { data } = await axios.get(url);
         setQuestions(data?.items);
+        setLoading(false);
       } catch (error) {
-        console.log(error.message);
+        setLoading(false);
+        return console.log(error.message)
       }
-      setLoading(false);
     };
     getData();
-  }, []);
+  }, [searchValue]);
 
   if (loading) {
-    return <Loading/>;
+    return <Loading />;
   }
 
   return (
@@ -130,7 +135,11 @@ const Questions = () => {
       <div className="my-16 flex flex-col items-center justify-center text-center">
         <div className="mb-8">
           <button className="rounded-full bg-white shadow-lg shadow-primary p-3 mb-8">
-            <img src={logo} alt="stackoverflow" className="inline-block w-20 h-20" />
+            <img
+              src={logo}
+              alt="stackoverflow"
+              className="inline-block w-20 h-20"
+            />
           </button>
           <div className="flex items-center gap-1">
             <div className="h-1 w-10 bg-primary rounded-full"></div>

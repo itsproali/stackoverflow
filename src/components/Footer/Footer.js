@@ -110,7 +110,9 @@ const Footer = () => {
             <h2 className="font-semibold mb-4 uppercase">LIfe/Arts</h2>
             {life_arts?.map((item) => (
               <div key={item}>
-                <span className="hover:underline cursor-pointer text-xs">{item}</span>
+                <span className="hover:underline cursor-pointer text-xs">
+                  {item}
+                </span>
               </div>
             ))}
             <span className="hover:underline cursor-pointer text-xs font-semibold">
@@ -119,12 +121,12 @@ const Footer = () => {
           </div>
           {/* Culture/Recreation */}
           <div>
-            <h2 className="font-semibold mb-4 uppercase">
-              CUlture/Recreation
-            </h2>
+            <h2 className="font-semibold mb-4 uppercase">CUlture/Recreation</h2>
             {culture_recreation?.map((item) => (
               <div key={item}>
-                <span className="hover:underline cursor-pointer text-xs">{item}</span>
+                <span className="hover:underline cursor-pointer text-xs">
+                  {item}
+                </span>
               </div>
             ))}
             <span className="hover:underline cursor-pointer text-xs font-semibold">
@@ -140,7 +142,9 @@ const Footer = () => {
             <h2 className="font-semibold mb-4 uppercase">Science</h2>
             {science?.map((item) => (
               <div key={item}>
-                <span className="hover:underline cursor-pointer text-xs">{item}</span>
+                <span className="hover:underline cursor-pointer text-xs">
+                  {item}
+                </span>
               </div>
             ))}
             <span className="hover:underline cursor-pointer text-xs font-semibold">
@@ -152,7 +156,9 @@ const Footer = () => {
             <h2 className="font-semibold mb-4 uppercase">Others</h2>
             {others?.map((item) => (
               <div key={item}>
-                <span className="hover:underline cursor-pointer text-xs">{item}</span>
+                <span className="hover:underline cursor-pointer text-xs">
+                  {item}
+                </span>
               </div>
             ))}
           </div>
@@ -162,8 +168,18 @@ const Footer = () => {
       <div className="h-[1px] w-full bg-accent"></div>
 
       <div className="flex items-center justify-between flex-col md:flex-row text-xs my-8">
-        <p>site design / logo &copy; 2016 Stack Exchange Inc; user contribution licensed under cc by-sa 3.0 attribution required.</p>
-        <p>rev 2016.8.1.3852</p>
+        <p>Copyright &copy; 2022 All Rights Reserved</p>
+        <p>
+          Developed by{" "}
+          <a
+            href="https://itsproali.netlify.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline"
+          >
+            Mohammad Ali
+          </a>
+        </p>
       </div>
     </div>
   );
