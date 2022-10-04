@@ -30,7 +30,7 @@ const SideNav = ({ isOpen, setIsOpen }) => {
     <div
       className={`${
         isOpen
-          ? "ml-0"
+          ? "ml-0 side-nav-shadow"
           : "-ml-[100%] md:-ml-[35%] lg:-ml-[20%] "
       } fixed top-0 left-0 z-40 md:relative bg-white w-[100%] md:w-[35%] lg:w-[20%] h-screen md:h-auto bg-opacity-70 md:bg-opacity-100 backdrop-blur-md side-nav`}
     >
@@ -55,14 +55,14 @@ const SideNav = ({ isOpen, setIsOpen }) => {
         {routes?.map((route) => (
           <Link
             key={route.title}
-            className={`flex items-center gap-4 hover:text-primary duration-300`}
+            className={`flex items-center gap-4 hover:text-primary duration-300 ${
+              route.title === "questions" && "text-primary"
+            }`}
             to={route.path}
           >
             <div
               className={`h-7 w-1 bg-primary mx-2 ${
-                route.title === "questions"
-                  ? "visible"
-                  : "invisible"
+                route.title === "questions" ? "visible" : "invisible"
               }`}
             ></div>
             <span>{route.icon}</span>

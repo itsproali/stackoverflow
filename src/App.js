@@ -7,7 +7,7 @@ import { useState } from "react";
 import GoTop from "./components/GoTop/GoTop";
 
 function App() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <div className="block md:flex min-h-screen relative border-b">

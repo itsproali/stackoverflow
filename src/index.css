@@ -45,5 +45,8 @@ code {
 
 .jobs-heading::after {
   content: "jobs";
+}
 
+.network-heading::after {
+  content: "hot";
 }
