@@ -4,6 +4,9 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import TimeAgo from "javascript-time-ago";
+import en from "javascript-time-ago/locale/en.json";
+import ru from "javascript-time-ago/locale/ru.json";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -18,3 +21,5 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+TimeAgo.addDefaultLocale(en);
+TimeAgo.addLocale(ru);

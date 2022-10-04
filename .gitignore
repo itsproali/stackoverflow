@@ -11,6 +11,7 @@
 # production
 /build
 Notes.txt
+requirements.pdf
 
 # misc
 .DS_Store

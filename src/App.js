@@ -5,22 +5,21 @@ import Home from "./pages/Home/Home";
 import SideNav from "./components/SideNav/SideNav";
 import { useState } from "react";
 
-
 function App() {
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(true);
   return (
     <>
-    <div className="block md:flex min-h-screen relative border-b">
-      <SideNav isOpen={isOpen} setIsOpen={setIsOpen} />
-      <div className="w-full container mx-auto">
-      <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
-      <Routes>
-        <Route path="/" element={<Home isOpen={isOpen}/>} />
-      </Routes>
+      <div className="block md:flex min-h-screen relative border-b">
+        <SideNav isOpen={isOpen} setIsOpen={setIsOpen} />
+        <div className="w-full container mx-auto">
+          <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
+          <Routes>
+            <Route path="/" element={<Home isOpen={isOpen} />} />
+          </Routes>
+        </div>
       </div>
-    </div>
-      <Footer/>
-      </>
+      <Footer />
+    </>
   );
 }
 

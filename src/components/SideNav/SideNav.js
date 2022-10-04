@@ -61,7 +61,7 @@ const SideNav = ({ isOpen, setIsOpen }) => {
             <div
               className={`h-7 w-1 bg-primary mx-2 ${
                 route.title === "questions"
-                  ? "visible active-route"
+                  ? "visible"
                   : "invisible"
               }`}
             ></div>

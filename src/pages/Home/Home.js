@@ -1,11 +1,12 @@
 import React from "react";
+import Jobs from "../Jobs/Jobs";
+import Questions from "../Questions/Questions";
 
-const Home = ({isOpen}) => {
+const Home = () => {
   return (
     <div className="flex mx-4 justify-around">
-      <div className="bg-white w-100%">
-      </div>
-      <div className="bg-accent w-[30%]"></div>
+      <Questions />
+      <Jobs />
     </div>
   );
 };
