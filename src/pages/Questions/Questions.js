@@ -21,7 +21,7 @@ const Questions = () => {
       }
       setLoading(false);
     };
-    // getData();
+    getData();
   }, []);
 
   if (loading) {

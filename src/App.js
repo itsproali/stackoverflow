@@ -4,7 +4,7 @@ import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
 import SideNav from "./components/SideNav/SideNav";
 import { useState } from "react";
-import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import GoTop from "./components/GoTop/GoTop";
 
 function App() {
   const [isOpen, setIsOpen] = useState(true);
@@ -17,10 +17,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home isOpen={isOpen} />} />
           </Routes>
+          <GoTop/>
         </div>
       </div>
       <Footer />
-      {/* <ScrollToTop /> */}
     </>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { FaTwitter, FaFacebook } from "react-icons/fa";
+import { FaTwitter, FaFacebook, FaDribbble } from "react-icons/fa";
 
 const Footer = () => {
   const technologies = [
@@ -78,7 +78,7 @@ const Footer = () => {
             <FaFacebook />
           </span>
           <span>
-            <FaFacebook />
+            <FaDribbble />
           </span>
         </div>
       </div>
@@ -92,12 +92,12 @@ const Footer = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-1">
             {technologies?.map((technology) => (
               <div key={technology}>
-                <span className="hover:underline cursor-pointer">
+                <span className="hover:underline cursor-pointer text-xs">
                   {technology}
                 </span>
               </div>
             ))}
-            <span className="hover:underline cursor-pointer font-semibold">
+            <span className="hover:underline cursor-pointer text-xs font-semibold">
               50 + more
             </span>
           </div>
@@ -110,10 +110,10 @@ const Footer = () => {
             <h2 className="font-semibold mb-4 uppercase">LIfe/Arts</h2>
             {life_arts?.map((item) => (
               <div key={item}>
-                <span className="hover:underline cursor-pointer">{item}</span>
+                <span className="hover:underline cursor-pointer text-xs">{item}</span>
               </div>
             ))}
-            <span className="hover:underline cursor-pointer font-semibold">
+            <span className="hover:underline cursor-pointer text-xs font-semibold">
               19 more
             </span>
           </div>
@@ -124,10 +124,10 @@ const Footer = () => {
             </h2>
             {culture_recreation?.map((item) => (
               <div key={item}>
-                <span className="hover:underline cursor-pointer">{item}</span>
+                <span className="hover:underline cursor-pointer text-xs">{item}</span>
               </div>
             ))}
-            <span className="hover:underline cursor-pointer font-semibold">
+            <span className="hover:underline cursor-pointer text-xs font-semibold">
               21 more
             </span>
           </div>
@@ -140,10 +140,10 @@ const Footer = () => {
             <h2 className="font-semibold mb-4 uppercase">Science</h2>
             {science?.map((item) => (
               <div key={item}>
-                <span className="hover:underline cursor-pointer">{item}</span>
+                <span className="hover:underline cursor-pointer text-xs">{item}</span>
               </div>
             ))}
-            <span className="hover:underline cursor-pointer font-semibold">
+            <span className="hover:underline cursor-pointer text-xs font-semibold">
               5 more
             </span>
           </div>
@@ -152,7 +152,7 @@ const Footer = () => {
             <h2 className="font-semibold mb-4 uppercase">Others</h2>
             {others?.map((item) => (
               <div key={item}>
-                <span className="hover:underline cursor-pointer">{item}</span>
+                <span className="hover:underline cursor-pointer text-xs">{item}</span>
               </div>
             ))}
           </div>
@@ -160,6 +160,11 @@ const Footer = () => {
       </div>
 
       <div className="h-[1px] w-full bg-accent"></div>
+
+      <div className="flex items-center justify-between flex-col md:flex-row text-xs my-8">
+        <p>site design / logo &copy; 2016 Stack Exchange Inc; user contribution licensed under cc by-sa 3.0 attribution required.</p>
+        <p>rev 2016.8.1.3852</p>
+      </div>
     </div>
   );
 };
